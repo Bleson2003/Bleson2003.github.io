@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bleson C Denson | Portfolio</title>
+
+  <!-- AOS Animation -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom, #bcdffb 0%, #ffffff 100%);
+      color: #333;
+      scroll-behavior: smooth;
+      min-height: 100vh;
+    }
+
+    nav {
+      position: fixed;
+      top: 1rem;
+      right: 2rem;
+      z-index: 1000;
+    }
+
+    nav a {
+      margin-left: 1rem;
+      text-decoration: none;
+      color: #fff;
+      font-weight: 500;
+      font-size: 1rem;
+      padding: 0.5rem 0.75rem;
+      background-color: rgba(0, 0, 0, 0.2);
+      border-radius: 5px;
+      transition: background-color 0.3s;
+      display: inline-block;
+    }
+
+    nav a:hover {
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    header {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 6rem 2rem 2rem 2rem;
+    }
+
+    .hero-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 3rem;
+      width: 100%;
+      max-width: 1000px;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+      background-color: rgba(255, 255, 255, 0.95);
+      flex-wrap: wrap;
+    }
+
+    .hero-container img {
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid #fff;
+      background-color: #eee;
+      flex-shrink: 0;
+    }
+
+    .hero-text {
+      flex: 1;
+      min-width: 300px;
+      color: #000;
+      text-align: left;
+    }
+
+    .hero-text h1 {
+      font-size: 2.5rem;
+      margin: 0 0 1rem 0;
+      color: #0066cc;
+    }
+
+    .hero-text p {
+      font-size: 1rem;
+      margin: 1rem 0;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    section {
+      padding: 2rem 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    h2 {
+      border-bottom: 3px solid #0066cc;
+      padding-bottom: 0.8rem;
+      font-size: 2rem;
+      margin-top: 0;
+      color: #0066cc;
+    }
+
+    .project {
+      background: white;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .project:hover {
+      transform: translateY(-5px);
+    }
+
+    .project h3 {
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+      color: #0066cc;
+      font-size: 1.3rem;
+    }
+
+    .project p {
+      margin: 0.8rem 0;
+      line-height: 1.6;
+      color: #555;
+    }
+
+    .resume-preview {
+      width: 100%;
+      height: 600px;
+      border: none;
+      margin-top: 1rem;
+      background: #f5f5f5;
+    }
+
+    .contact-links {
+      text-align: left;
+    }
+
+    .contact-links p {
+      margin: 1rem 0;
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+
+    .contact-links a {
+      text-decoration: none;
+      color: #0066cc;
+      margin-left: 8px;
+      font-weight: 500;
+    }
+
+    .contact-links a:hover {
+      text-decoration: underline;
+    }
+
+    .contact-links i {
+      margin-right: 12px;
+      color: #0066cc;
+      width: 20px;
+    }
+
+    footer {
+      background: #222;
+      color: white;
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 768px) {
+      .hero-container {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 1.5rem;
+      }
+
+      .hero-text {
+        text-align: center;
+        min-width: auto;
+      }
+
+      .hero-text h1 {
+        font-size: 2rem;
+      }
+
+      .hero-text p {
+        font-size: 0.95rem;
+      }
+
+      nav {
+        position: fixed;
+        right: 1rem;
+        top: 0.5rem;
+      }
+
+      nav a {
+        margin: 0.3rem 0.2rem;
+        padding: 0.4rem 0.5rem;
+        font-size: 0.85rem;
+      }
+
+      section {
+        padding: 1.5rem 1rem;
+      }
+
+      h2 {
+        font-size: 1.7rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HERO / ABOUT -->
+  <header id="about">
+    <nav>
+      <a href="#about"><i class="fas fa-user"></i> About</a>
+      <a href="#projects"><i class="fas fa-code"></i> Projects</a>
+      <a href="#research"><i class="fas fa-flask"></i> Research</a>
+      <a href="#resume"><i class="fas fa-file-alt"></i> Resume</a>
+      <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+    </nav>
+
+    <div class="hero-container" data-aos="fade-down">
+      <img
+        src="https://raw.githubusercontent.com/Bleson2003/profile_pic/main/1.jpg"
+        alt="Bleson's Profile Picture"
+        onerror="this.onerror=null;this.src='https://via.placeholder.com/220?text=Profile+Image';"
+      >
+
+      <div class="hero-text">
+        <h1>Bleson C Denson</h1>
+        <p>
+          I was born and raised in Pullad, a small town in Thiruvalla city, nestled in Pathanamthitta, Kerala. Growing up, I was always surrounded by energy—whether it was sprinting across school grounds for sports events, sketching whatever came to mind, or playing melodies on the piano. These early experiences with creativity, discipline, and competition have shaped much of who I am today.
+        </p>
+        <p>
+          After completing my BCA in Coimbatore, I am now in my final year of MCA. Along the way, I've sought out meaningful ways to apply what I learn—like volunteering for a college project that improved the placement portal and made a real difference in how the placement process is managed.
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <!-- PROJECTS -->
+  <section id="projects" data-aos="fade-up">
+    <h2>Projects</h2>
+
+    <div class="project" data-aos="zoom-in">
+      <h3>College Placement Portal</h3>
+      <p>
+        A web-based placement management system developed as part of a college project.
+        I worked primarily on the backend, focusing on database design, RESTful API
+        development, and notification handling.
+      </p>
+      <p>
+        The system supports job postings, student applications, job rounds, and
+        real-time notifications using Redis, with MongoDB used for persistent data
+        storage.
+      </p>
+    </div>
+
+    <div class="project" data-aos="zoom-in">
+      <h3>Flutter Chat Application</h3>
+      <p>
+        A real-time chat application built using Flutter and Firebase. The application
+        supports one-on-one and group messaging with user authentication, online status,
+        and responsive UI for mobile and web platforms.
+      </p>
+    </div>
+  </section>
+
+  <!-- RESEARCH -->
+  <section id="research" data-aos="fade-up">
+    <h2>Research</h2>
+
+    <div class="project">
+      <h3>AI Resource Management</h3>
+      <p><strong>National Student Research Symposium (SRS)</strong></p>
+      <p>
+        Presented a research paper focusing on efficient management of computational
+        resources such as memory, processing power, and lifecycle optimization in AI
+        systems. The work explored theoretical and practical challenges in AI resource
+        utilization.
+      </p>
+    </div>
+  </section>
+
+  <!-- RESUME -->
+  <section id="resume" data-aos="fade-up">
+    <h2>Resume</h2>
+    <iframe 
+      class="resume-preview"
+      src="https://drive.google.com/file/d/1waRjPbZxILKt0nrlFkH6t_0NnwB4xyua/preview">
+    </iframe>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" data-aos="fade-up">
+    <h2>Contact</h2>
+    <div class="contact-links">
+      <p><i class="fas fa-envelope"></i> <a href="mailto:blesson.2018.6@gmail.com">blesson.2018.6@gmail.com</a></p>
+      <p><i class="fab fa-github"></i> <a href="https://github.com/Bleson2003" target="_blank">github.com/Bleson2003</a></p>
+      <p><i class="fab fa-linkedin"></i> <a href="https://linkedin.com/in/bleson-c-denson-0b2637275" target="_blank">linkedin.com/in/bleson-c-denson-0b2637275</a></p>
+      <p><i class="fas fa-phone"></i> +91 94971 82373</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Bleson C Denson. All rights reserved.</p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000 });
+  </script>
+
+</body>
+</html>
